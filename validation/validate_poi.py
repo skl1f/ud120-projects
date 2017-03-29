@@ -12,8 +12,7 @@
 
 import pickle
 import sys
-sys.path.append("../tools/")
-from feature_format import featureFormat, targetFeatureSplit
+from tools.feature_format import featureFormat, targetFeatureSplit
 
 data_dict = pickle.load(open("../final_project/final_project_dataset.pkl", "r") )
 
@@ -27,6 +26,4 @@ labels, features = targetFeatureSplit(data)
 
 
 
-### it's all yours from here forward!  
-
-
+### it's all yours from here forward!
