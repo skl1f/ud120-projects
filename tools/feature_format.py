@@ -30,10 +30,11 @@
     that poi is listed first!
 """
 
-
 import numpy as np
 
-def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True, remove_any_zeroes=False, sort_keys = False):
+
+def featureFormat(dictionary, features, remove_NaN=True, remove_all_zeroes=True, remove_any_zeroes=False,
+                  sort_keys=False):
     """ convert dictionary to numpy array of features
         remove_NaN = True will convert "NaN" string to 0.0
         remove_all_zeroes = True will omit any data points for which
@@ -100,7 +101,7 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
     return np.array(return_list)
 
 
-def targetFeatureSplit( data ):
+def targetFeatureSplit(data):
     """
         given a numpy array like the one returned from
         featureFormat, separate out the first feature

@@ -3,6 +3,7 @@
 from nltk.stem.snowball import SnowballStemmer
 import string
 
+
 def parseOutText(f):
     """ given an opened email file f, parse out all text below the
         metadata block at the top
@@ -15,7 +16,6 @@ def parseOutText(f):
         text = parseOutText(f)
 
         """
-
 
     f.seek(0)  ### go back to beginning of file (annoying)
     all_text = f.read()
@@ -34,13 +34,9 @@ def parseOutText(f):
         ### and append the stemmed word to words (make sure there's a single
         ### space between each stemmed word)
 
-
-
-
-
     return words
 
-    
+
 def main():
     ff = open("../text_learning/test_email.txt", "r")
     text = parseOutText(ff)

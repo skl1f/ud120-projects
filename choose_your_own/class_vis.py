@@ -7,6 +7,7 @@ import base64
 import json
 import subprocess
 
+
 def prettyPicture(clf, X_test, y_test):
     (x_min, x_max) = (0.0, 0.0)
     (y_min, y_max) = (0.0, 1.0)
@@ -25,10 +26,10 @@ def prettyPicture(clf, X_test, y_test):
     plt.pcolormesh(xx, yy, Z, cmap=pl.cm.seismic)
 
     # Plot also the test points
-    grade_sig = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii]==0]
-    bumpy_sig = [X_test[ii][1] for ii in range(0, len(X_test)) if y_test[ii]==0]
-    grade_bkg = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii]==1]
-    bumpy_bkg = [X_test[ii][1] for ii in range(0, len(X_test)) if y_test[ii]==1]
+    grade_sig = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii] == 0]
+    bumpy_sig = [X_test[ii][1] for ii in range(0, len(X_test)) if y_test[ii] == 0]
+    grade_bkg = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii] == 1]
+    bumpy_bkg = [X_test[ii][1] for ii in range(0, len(X_test)) if y_test[ii] == 1]
 
     plt.scatter(grade_sig, bumpy_sig, color="b", label="fast")
     plt.scatter(grade_bkg, bumpy_bkg, color="r", label="slow")
@@ -38,6 +39,7 @@ def prettyPicture(clf, X_test, y_test):
 
     plt.savefig("test.png")
 
+
 def output_image(name, format, bytes):
     image_start = "BEGIN_IMAGE_f9825uweof8jw9fj4r8"
     image_end = "END_IMAGE_0238jfw08fjsiufhw8frs"
@@ -45,4 +47,4 @@ def output_image(name, format, bytes):
     data['name'] = name
     data['format'] = format
     data['bytes'] = base64.encodestring(bytes)
-    print(image_start+json.dumps(data)+image_end)
+    print(image_start + json.dumps(data) + image_end)

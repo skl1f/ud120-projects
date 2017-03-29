@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import sys
 from tools.feature_format import featureFormat, targetFeatureSplit
 
+
 def Draw(pred, features, poi, mark_poi=False, name="image.png", f1_name="feature 1", f2_name="feature 2"):
     """ some plotting code designed to help you visualize your clusters """
 
@@ -34,7 +35,6 @@ data_dict = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 ### there's an outlier--remove it!
 data_dict.pop("TOTAL", 0)
 
-
 ### the input features we want to use
 ### can be any key in the person-level dictionary (salary, director_fees, etc.)
 feature_1 = "salary"
@@ -43,7 +43,6 @@ poi = "poi"
 features_list = [poi, feature_1, feature_2]
 data = featureFormat(data_dict, features_list)
 poi, finance_features = targetFeatureSplit(data)
-
 
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to

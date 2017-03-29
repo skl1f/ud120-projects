@@ -20,7 +20,6 @@ from tools.parse_out_email_text import parseOutText
     The data is stored in lists and packed away in pickle files at the end.
 """
 
-
 from_sara = open("from_sara.txt", "r")
 from_chris = open("from_chris.txt", "r")
 
@@ -33,7 +32,6 @@ word_data = []
 ### temp_counter helps you only look at the first 200 emails in the list so you
 ### can iterate your modifications quicker
 temp_counter = 0
-
 
 for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
