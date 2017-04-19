@@ -33,4 +33,4 @@ print("prediction time: {0}".format(round(time() - t1, 3), "s"))
 print(sum(prediction0))
 
 accuracy = clf.score(features_test, labels_test)
-print("Accuracy {0}".format(accuracy))
+print("Accuracy: {0}".format(accuracy))
